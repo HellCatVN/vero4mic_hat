@@ -163,6 +163,9 @@ class APA102:
         print(brightness & 0b00011111)
         print(ledstart)
         start_index = led_num
+        print(self.rgb[0])
+        print(self.rgb[1])
+        print(self.rgb[2])
         self.leds[start_index] = ledstart
         self.leds[start_index + self.rgb[0]] = 0
         self.leds[start_index + self.rgb[1]] = 255
