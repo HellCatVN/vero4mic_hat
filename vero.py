@@ -80,10 +80,10 @@ if __name__ == '__main__':
             # time.sleep(6)
             # pixels.think()
             # time.sleep(3)
-            # pixels.speak()
-            # time.sleep(6)
+            pixels.speak()
+            time.sleep(6)
             pixels.off()
-            time.sleep(3)
+            time.sleep(1)
         except KeyboardInterrupt:
             break
 
