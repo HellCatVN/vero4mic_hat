@@ -38,9 +38,9 @@ class VeroLedPattern(object):
             self.show(pixels)
             time.sleep(0.005)
 
-        # pixels =  numpy.roll(pixels, 4)
-        # self.show(pixels)
-        # time.sleep(0.1)
+        pixels =  numpy.roll(pixels, 4)
+        self.show(pixels)
+        time.sleep(0.1)
 
         # for i in range(2):
         #     new_pixels = numpy.roll(pixels, 4)
