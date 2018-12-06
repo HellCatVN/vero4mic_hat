@@ -62,9 +62,6 @@ class Pixels:
 
     def show(self, data):
         i=1
-        print(data[0])
-        print(data[1])
-        print(data[2])
         self.dev.set_pixel(i, int(data[0]) , int(data[1]), int(data[2]), int(data[3]))
         self.dev.show()
 

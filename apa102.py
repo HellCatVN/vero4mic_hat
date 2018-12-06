@@ -160,6 +160,7 @@ class APA102:
         brightness = int(brightness)
         # LED startframe is three "1" bits, followed by 5 brightness bits
         ledstart = (brightness & 0b00011111) | self.LED_START
+        print(brightness & 0b00011111)
         print(ledstart)
         start_index = led_num
         self.leds[start_index] = ledstart
