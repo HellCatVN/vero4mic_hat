@@ -11,22 +11,7 @@ from alexa_led_pattern import AlexaLedPattern
 from google_home_led_pattern import GoogleHomeLedPattern
 
 class Pixels:
-    PIXELS_N = 8
-
-    def __init__(self, pattern=AlexaLedPattern):
-        self.pattern = pattern(show=self.show)
-
-        self.dev = apa102.APA102(num_led=self.PIXELS_N)
-        
-        self.power = LED(5)
-        self.power.on()
-
-        self.queue = Queue.Queue()
-        self.thread = threading.Thread(target=self._run)
-        self.thread.daemon = True
-        self.thread.start()
-
-        self.last_direction = None
+    PIXELS_N = 12
 
     def wakeup(self, direction=0):
         self.last_direction = direction
