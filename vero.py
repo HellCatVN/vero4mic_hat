@@ -26,20 +26,20 @@ class Pixels:
 
         self.last_direction = None
 
-    # def wakeup(self, direction=0):
-    #     self.last_direction = direction
-    #     def f():
-    #         self.pattern.wakeup(direction)
+    def wakeup(self, direction=0):
+        self.last_direction = direction
+        def f():
+            self.pattern.wakeup(direction)
 
-    #     self.put(f)
+        self.put(f)
 
-    # def listen(self):
-    #     if self.last_direction:
-    #         def f():
-    #             self.pattern.wakeup(self.last_direction)
-    #         self.put(f)
-    #     else:
-    #         self.put(self.pattern.listen)
+    def listen(self):
+        if self.last_direction:
+            def f():
+                self.pattern.wakeup(self.last_direction)
+            self.put(f)
+        else:
+            self.put(self.pattern.listen)
 
     def think(self):
         self.put(self.pattern.think)
