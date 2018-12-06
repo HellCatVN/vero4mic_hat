@@ -76,12 +76,12 @@ if __name__ == '__main__':
     while True:
 
         try:
-            # pixels.wakeup()
-            # time.sleep(6)
+            pixels.wakeup()
+            time.sleep(3)
             # pixels.think()
             # time.sleep(3)
-            pixels.speak()
-            time.sleep(6)
+            # pixels.speak()
+            # time.sleep(6)
             pixels.off()
             time.sleep(1)
         except KeyboardInterrupt:
