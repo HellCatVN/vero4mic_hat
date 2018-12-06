@@ -162,9 +162,9 @@ class APA102:
         ledstart = (brightness & 0b00011111) | self.LED_START
         start_index = 4 * led_num
         self.leds[start_index] = ledstart
-        self.leds[start_index + self.rgb[0]] = red
-        self.leds[start_index + self.rgb[1]] = green
-        self.leds[start_index + self.rgb[2]] = blue
+        self.leds[start_index + self.rgb[0]] = 0
+        self.leds[start_index + self.rgb[1]] = 255
+        self.leds[start_index + self.rgb[2]] = 0
 
 
     def set_pixel_rgb(self, led_num, rgb_color, bright_percent=100):
