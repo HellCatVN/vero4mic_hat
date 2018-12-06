@@ -1,5 +1,5 @@
 import time
-from pixels import Pixels, pixels
+from vero import Pixels, pixels
 from alexa_led_pattern import AlexaLedPattern
 from google_home_led_pattern import GoogleHomeLedPattern
 
