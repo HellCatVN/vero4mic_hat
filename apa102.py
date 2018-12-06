@@ -150,7 +150,7 @@ class APA102:
         """
         led_num = 1
         red = 255
-        green = 255
+        green = 0
         blue = 0
         brightness = 5
         if led_num < 0:
