@@ -160,14 +160,12 @@ class APA102:
         brightness = int(brightness)
         # LED startframe is three "1" bits, followed by 5 brightness bits
         ledstart = (brightness & 0b00011111) | self.LED_START
-        print(brightness & 0b00011111)
-        print(ledstart)
-        start_index = led_num
+        start_index = 0
         self.leds[start_index] = ledstart
-        self.leds[start_index + self.rgb[0]] = 0
+        self.leds[start_index + self.rgb[0]] = 255
         self.leds[start_index + self.rgb[1]] = 255
         self.leds[start_index + self.rgb[2]] = 0
-        print(self.leds)
+
 
     def set_pixel_rgb(self, led_num, rgb_color, bright_percent=100):
         """Sets the color of one pixel in the LED stripe.
