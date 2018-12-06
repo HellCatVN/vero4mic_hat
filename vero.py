@@ -78,12 +78,12 @@ if __name__ == '__main__':
         try:
             pixels.wakeup()
             time.sleep(3)
-            # pixels.think()
-            # time.sleep(3)
-            # pixels.speak()
-            # time.sleep(6)
+            pixels.think()
+            time.sleep(3)
+            pixels.speak()
+            time.sleep(6)
             pixels.off()
-            time.sleep(1)
+            time.sleep(3)
         except KeyboardInterrupt:
             break
 
