@@ -22,7 +22,7 @@ class VeroLedPattern(object):
     def wakeup(self, direction=0):
         position = int(0)
         #position = int((direction + 15) / (360 / self.pixels_number)) % self.pixels_numbers
-        pixels = [0, 0, 0, 100] * self.pixels_number
+        pixels = [0 ,0, 0, 0, 40] * self.pixels_number
         print(str(pixels))
         # pixels[position * 4 + 2] = 0
 
