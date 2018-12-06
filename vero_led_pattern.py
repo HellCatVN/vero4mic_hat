@@ -17,8 +17,8 @@ class VeroLedPattern(object):
 
         self.pixels = self.basis * 24
 
-        print("basis:"+self.basis)
-        print("pixels"+self.pixels)
+        print("basis:"+str(self.basis))
+        print("pixels"+str(self.pixels))
 
         if not show or not callable(show):
             def dummy(data):
