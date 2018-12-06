@@ -1,4 +1,3 @@
-
 import apa102
 import time
 import threading
@@ -7,14 +6,12 @@ try:
     import queue as Queue
 except ImportError:
     import Queue as Queue
-
-from alexa_led_pattern import AlexaLedPattern
-from google_home_led_pattern import GoogleHomeLedPattern
+from vero_led_pattern import VeroLedPattern
 
 class Pixels:
     PIXELS_N = 12
 
-    def __init__(self, pattern=AlexaLedPattern):
+    def __init__(self, pattern=VeroLedPattern):
         self.pattern = pattern(show=self.show)
 
         self.dev = apa102.APA102(num_led=self.PIXELS_N)
@@ -72,8 +69,10 @@ class Pixels:
 
 pixels = Pixels()
 
-
 if __name__ == '__main__':
+
+    pixels.pattern = VeroLedPattern(show=pixels.show)
+
     while True:
 
         try:
