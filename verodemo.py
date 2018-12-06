@@ -71,7 +71,7 @@ pixels = Pixels()
 
 if __name__ == '__main__':
 
-    pixels.pattern = GoogleHomeLedPattern(show=pixels.show)
+    pixels.pattern = VeroLedPattern(show=pixels.show)
 
     while True:
 
