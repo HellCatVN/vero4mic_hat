@@ -152,13 +152,12 @@ class APA102:
             return  # Pixel is invisible, so ignore
         if led_num >= self.num_led:
             return  # again, invisible
-
+        print(bright_percent)
         # Calculate pixel brightness as a percentage of the
         # defined global_brightness. Round up to nearest integer
         # as we expect some brightness unless set to 0
         brightness = ceil(bright_percent*self.global_brightness/100.0)
         brightness = int(brightness)
-        print("light"+str(brightness))
         # LED startframe is three "1" bits, followed by 5 brightness bits
         ledstart = (brightness & 0b00011111) | self.LED_START
         start_index = 4 * led_num

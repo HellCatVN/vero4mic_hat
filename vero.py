@@ -65,7 +65,6 @@ class Pixels:
         print(data[0])
         print(data[1])
         print(data[2])
-        print(data[3])
         self.dev.set_pixel(i, int(data[0]) , int(data[1]), int(data[2]), int(data[3]))
         self.dev.show()
 
