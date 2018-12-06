@@ -7,15 +7,9 @@ except ImportError:
 
 
 class VeroLedPattern(object):
-    def __init__(self, show=None):
-        self.basis = [0] * 4 * 12
-        self.basis[0 * 4 + 1] = 2
-        self.basis[3 * 4 + 1] = 1
-        self.basis[3 * 4 + 2] = 1
-        self.basis[6 * 4 + 2] = 2
-        self.basis[9 * 4 + 3] = 2
-
-        self.pixels = self.basis * 24
+    def __init__(self, show=None, number=12):
+        self.pixels_number = number
+        self.pixels = [0] * 4 * number
 
         if not show or not callable(show):
             def dummy(data):
@@ -26,52 +20,41 @@ class VeroLedPattern(object):
         self.stop = False
 
     def wakeup(self, direction=0):
+        position = int((direction + 15) / (360 / self.pixels_number)) % self.pixels_number
 
-        position = int((direction + 15) / 30) % 12
+        pixels = [0, 0, 0, 24] * self.pixels_number
+        pixels[position * 4 + 2] = 48
 
-        basis = numpy.roll(self.basis, position * 4)
-        self.show(basis)
-        time.sleep(0.005)
+        self.show(pixels)
 
     def listen(self):
-        pixels = self.pixels
-        for i in range(1, 25):
-            self.show(pixels * i / 24)
-            time.sleep(0.01)
+        pixels = [0, 0, 0, 24] * self.pixels_number
+
+        self.show(pixels)
 
     def think(self):
-        pixels = self.pixels
+        pixels  = [0, 0, 12, 12, 0, 0, 0, 24] * self.pixels_number
 
         while not self.stop:
-            pixels = numpy.roll(pixels, 4)
             self.show(pixels)
             time.sleep(0.2)
-
-        t = 0.1
-        for i in range(0, 5):
-            pixels = numpy.roll(pixels, 4)
-            self.show(pixels * (4 - i) / 4)
-            time.sleep(t)
-            t /= 2
-
-        self.pixels = pixels
+            pixels = pixels[-4:] + pixels[:-4]
 
     def speak(self):
-        pixels = self.pixels
         step = 1
-        brightness = 5
+        position = 12
         while not self.stop:
-            self.show(pixels * brightness / 24)
-            time.sleep(0.02)
-
-            if brightness <= 5:
+            pixels  = [0, 0, position, 24 - position] * self.pixels_number
+            self.show(pixels)
+            time.sleep(0.01)
+            if position <= 0:
                 step = 1
                 time.sleep(0.4)
-            elif brightness >= 24:
+            elif position >= 12:
                 step = -1
                 time.sleep(0.4)
 
-            brightness += step
+            position += step
 
     def off(self):
         self.show([0] * 4 * 12)
