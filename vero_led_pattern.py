@@ -28,17 +28,14 @@ class VeroLedPattern(object):
     def wakeup(self, direction=0):
 
         position = int((direction + 15) / 30) % 12
-        print(int(direction + 15))
-        print(int(direction+15) / 30)
-        print(int((direction + 15) / 30) / 12)
-        print("Wakeup:"+str(position))
-
+        #wake postion 0
         basis = numpy.roll(self.basis, position * 4)
-        
-        print("Wakeup Basis:"+str(basis))
+        #not shift basis
 
         for i in range(1, 25):
+            #loop basis range
             pixels = basis * i
+            print("pixels:"+ str(pixels))
             self.show(pixels)
             time.sleep(0.005)
 
