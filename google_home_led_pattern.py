@@ -8,7 +8,7 @@ except ImportError:
 
 class GoogleHomeLedPattern(object):
     def __init__(self, show=None):
-        self.basis = numpy.array([0] * 4 * 12)
+        self.basis = [0] * 4 * 12
         self.basis[0 * 4 + 1] = 2
         self.basis[3 * 4 + 1] = 1
         self.basis[3 * 4 + 2] = 1
