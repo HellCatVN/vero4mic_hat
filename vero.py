@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
         try:
             pixels.wakeup()
-            time.sleep(5)
+            # time.sleep(5)
             # pixels.think()
             # time.sleep(3)
             # pixels.speak()
