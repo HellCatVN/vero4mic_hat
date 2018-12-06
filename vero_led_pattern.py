@@ -29,8 +29,8 @@ class VeroLedPattern(object):
 
         position = int((direction + 15) / 30) % 12
         print(int((direction + 15))
-        print (int((direction + 15) / 30))
-        print (int((direction + 15) / 30) / 12)
+        print(int((direction + 15) / 30))
+        print(int((direction + 15) / 30) / 12)
         print("Wakeup:"+str(position))
 
         basis = numpy.roll(self.basis, position * 4)
