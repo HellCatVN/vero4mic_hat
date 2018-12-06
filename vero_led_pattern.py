@@ -36,20 +36,20 @@ class VeroLedPattern(object):
             #loop basis range
             pixels = basis * i
             self.show(pixels)
-            time.sleep(0.001)
+            time.sleep(0.005)
 
-        # pixels =  numpy.roll(pixels, 4)
-        # self.show(pixels)
-        # time.sleep(0.5)
-        # pixels =  numpy.roll(pixels, 4)
-        # self.show(pixels)
-        # time.sleep(0.5)
-        # pixels =  numpy.roll(pixels, 4)
-        # self.show(pixels)
-        # time.sleep(0.5)
-        # pixels =  numpy.roll(pixels, 4)
-        # self.show(pixels)
-        # time.sleep(0.5)
+        pixels =  numpy.roll(pixels, 4)
+        self.show(pixels)
+        time.sleep(0.5)
+        pixels =  numpy.roll(pixels, 4)
+        self.show(pixels)
+        time.sleep(0.5)
+        pixels =  numpy.roll(pixels, 4)
+        self.show(pixels)
+        time.sleep(0.5)
+        pixels =  numpy.roll(pixels, 4)
+        self.show(pixels)
+        time.sleep(0.5)
 
         # for i in range(2):
         #     new_pixels = numpy.roll(pixels, 4)
