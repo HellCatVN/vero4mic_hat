@@ -164,11 +164,10 @@ class APA102:
         print(ledstart)
         start_index = led_num
         self.leds[start_index] = ledstart
-        print(self.leds)
         self.leds[start_index + self.rgb[0]] = 0
         self.leds[start_index + self.rgb[1]] = 255
         self.leds[start_index + self.rgb[2]] = 0
-
+        print(self.leds)
 
     def set_pixel_rgb(self, led_num, rgb_color, bright_percent=100):
         """Sets the color of one pixel in the LED stripe.
