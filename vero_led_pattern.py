@@ -28,6 +28,7 @@ class VeroLedPattern(object):
     def wakeup(self, direction=0):
 
         position = int((direction + 15) / 30) % 12
+        print(int((direction + 15))
         print (int((direction + 15) / 30))
         print (int((direction + 15) / 30) / 12)
         print("Wakeup:"+str(position))
