@@ -61,11 +61,8 @@ class Pixels:
             func()
 
     def show(self, data):
-        for i in range(2,3):
-            print(i)
-            print("Data:"+str(int(data[4*i + 1])))
-            self.dev.set_pixel(i, int(data[4*i + 1]), int(data[4*i + 2]), int(data[4*i + 3]))
-
+        i=1
+        self.dev.set_pixel(i, int(data[4*i + 1]), int(data[4*i + 2]), int(data[4*i + 3]))
         self.dev.show()
 
 
