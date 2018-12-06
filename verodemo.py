@@ -13,6 +13,21 @@ from google_home_led_pattern import GoogleHomeLedPattern
 class Pixels:
     PIXELS_N = 12
 
+    def __init__(self, pattern):
+        self.pattern = pattern(show=self.show)
+
+        self.dev = apa102.APA102(num_led=self.PIXELS_N)
+        
+        self.power = LED(5)
+        self.power.on()
+
+        self.queue = Queue.Queue()
+        self.thread = threading.Thread(target=self._run)
+        self.thread.daemon = True
+        self.thread.start()
+
+        self.last_direction = None
+
     def wakeup(self, direction=0):
         self.last_direction = direction
         def f():
