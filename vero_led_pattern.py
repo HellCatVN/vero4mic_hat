@@ -35,7 +35,7 @@ class VeroLedPattern(object):
         for i in range(1, 25):
             #loop basis range
             pixels = basis * i
-            print("pixels"+ i +":" + str(pixels))
+            print("pixels"+ str(i) +":" + str(pixels))
             self.show(pixels)
             time.sleep(0.005)
 
