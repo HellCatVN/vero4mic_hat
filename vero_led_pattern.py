@@ -40,45 +40,16 @@ class VeroLedPattern(object):
 
         pixels =  numpy.roll(pixels, 4)
         self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)        
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-        # for i in range(2):
-        #     new_pixels = numpy.roll(pixels, 4)
-        #     self.show(new_pixels * 0.5 + pixels)
-        #     pixels = new_pixels
-        #     time.sleep(0.1)
+        time.sleep(0.5)
 
-        # self.show(pixels)
-        # self.pixels = pixels
+        for i in range(2):
+            new_pixels = numpy.roll(pixels, 4)
+            self.show(new_pixels * 0.5 + pixels)
+            pixels = new_pixels
+            time.sleep(0.1)
+
+        self.show(pixels)
+        self.pixels = pixels
 
     def listen(self):
         pixels = self.pixels
