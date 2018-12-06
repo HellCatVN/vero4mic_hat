@@ -30,23 +30,8 @@ class VeroLedPattern(object):
         position = int((direction + 15) / 30) % 12
 
         basis = numpy.roll(self.basis, position * 4)
-        for i in range(1, 25):
-            pixels = basis * i
-            self.show(pixels)
-            time.sleep(0.005)
-
-        pixels =  numpy.roll(pixels, 4)
-        self.show(pixels)
-        time.sleep(0.1)
-
-        for i in range(2):
-            new_pixels = numpy.roll(pixels, 4)
-            self.show(new_pixels * 0.5 + pixels)
-            pixels = new_pixels
-            time.sleep(0.1)
-
-        self.show(pixels)
-        self.pixels = pixels
+        self.show(basis)
+        time.sleep(0.005)
 
     def listen(self):
         pixels = self.pixels
