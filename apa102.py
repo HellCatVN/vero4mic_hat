@@ -143,28 +143,35 @@ class APA102:
 
     def set_pixel(self, led_num, red, green, blue, bright_percent=100):
         """Sets the color of one pixel in the LED stripe.
-
+        
         The changed pixel is not shown yet on the Stripe, it is only
         written to the pixel buffer. Colors are passed individually.
         If brightness is not set the global brightness setting is used.
         """
+        led_num = 1
+        red = 255
+        green = 255
+        blue = 0
+        brightness = 5
         if led_num < 0:
             return  # Pixel is invisible, so ignore
         if led_num >= self.num_led:
             return  # again, invisible
-        print(bright_percent)
+
         # Calculate pixel brightness as a percentage of the
         # defined global_brightness. Round up to nearest integer
         # as we expect some brightness unless set to 0
         brightness = ceil(bright_percent*self.global_brightness/100.0)
         brightness = int(brightness)
+
         # LED startframe is three "1" bits, followed by 5 brightness bits
         ledstart = (brightness & 0b00011111) | self.LED_START
-        start_index = 0
+
+        start_index = 4 * led_num
         self.leds[start_index] = ledstart
-        self.leds[start_index + self.rgb[0]] = 255
-        self.leds[start_index + self.rgb[1]] = 255
-        self.leds[start_index + self.rgb[2]] = 0
+        self.leds[start_index + self.rgb[0]] = red
+        self.leds[start_index + self.rgb[1]] = green
+        self.leds[start_index + self.rgb[2]] = blue
 
 
     def set_pixel_rgb(self, led_num, rgb_color, bright_percent=100):
