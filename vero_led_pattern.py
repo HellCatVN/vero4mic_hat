@@ -23,7 +23,7 @@ class VeroLedPattern(object):
         position = int(0)
         #position = int((direction + 15) / (360 / self.pixels_number)) % self.pixels_numbers
         pixels = [0, 0, 0, 24] * self.pixels_number
-        pixels[position * 4 + 2] = 0
+        # pixels[position * 4 + 2] = 0
 
         self.show(pixels)
 
