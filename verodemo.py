@@ -1,4 +1,12 @@
+import apa102
 import time
+import threading
+from gpiozero import LED
+try:
+    import queue as Queue
+except ImportError:
+    import Queue as Queue
+    
 from alexa_led_pattern import AlexaLedPattern
 from google_home_led_pattern import GoogleHomeLedPattern
 
