@@ -158,7 +158,6 @@ class APA102:
         # as we expect some brightness unless set to 0
         brightness = ceil(bright_percent*self.global_brightness/100.0)
         brightness = int(brightness)
-        print("Bright:"+str(brightness))
         # LED startframe is three "1" bits, followed by 5 brightness bits
         ledstart = (brightness & 0b00011111) | self.LED_START
         print(led_num)
