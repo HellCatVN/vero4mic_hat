@@ -152,7 +152,7 @@ class APA102:
         red = 255
         green = 0
         blue = 0
-        brightness = 5
+        brightness = 0
         if led_num < 0:
             return  # Pixel is invisible, so ignore
         if led_num >= self.num_led:
