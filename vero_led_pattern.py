@@ -17,9 +17,6 @@ class VeroLedPattern(object):
 
         self.pixels = self.basis * 24
 
-        print("basis:"+str(self.basis))
-        print("pixels"+str(self.pixels))
-
         if not show or not callable(show):
             def dummy(data):
                 pass
@@ -31,7 +28,7 @@ class VeroLedPattern(object):
     def wakeup(self, direction=0):
         position = int((direction + 15) / 30) % 12
 
-        print("Wakeup:"+position)
+        print("Wakeup:"+str(position))
 
         basis = numpy.roll(self.basis, position * 4)
 
