@@ -6,12 +6,12 @@ try:
     import queue as Queue
 except ImportError:
     import Queue as Queue
-    
+
 from alexa_led_pattern import AlexaLedPattern
 from google_home_led_pattern import GoogleHomeLedPattern
 
 class Pixels:
-    PIXELS_N = 12
+    PIXELS_N = 8
 
     def __init__(self, pattern=AlexaLedPattern):
         self.pattern = pattern(show=self.show)
